@@ -1,0 +1,19 @@
+cantidad trabajadores
+cantidad ordenes
+id beneficio trabajadores_necesarios
+...
+cantidad conflictos trabajadores
+trabajador1 trabajador2
+...
+cantidad ordenes correlativas
+orden1 orden2
+...
+cantidad ordenes conflictivas
+orden1 orden2
+...
+cantidad ordenes repetitivas
+orden1 orden2
+...
+
+
+
