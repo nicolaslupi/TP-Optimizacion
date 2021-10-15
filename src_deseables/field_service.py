@@ -1,3 +1,5 @@
+# Con Restricciones Deseables
+
 import sys
 import cplex
 import numpy as np
@@ -326,6 +328,29 @@ def add_constraint_matrix(my_problem, data):
         values = [1]
         row = [indices, values]
         my_problem.linear_constraints.add(lin_expr=[row], senses=['L'], rhs=[5])
+
+    """ R17 """
+    # Conflictos entre trabajadores
+
+    if len(data.conflictos_trabajadores) > 0:
+        for conflicto in data.conflictos_trabajadores:
+            for o in range(data.cantidad_ordenes):
+                indices = list(map(int,(data.indices_Xidto[:,:,conflicto[0],o]).flatten())) + list(map(int,(data.indices_Xidto[:,:,conflicto[1],o]).flatten()))
+                values = [1] * 5*6*2
+                row = [indices, values]
+                my_problem.linear_constraints.add(lin_expr=[row], senses=['L'], rhs=[1])
+
+    """ R18 """
+    # Órdenes Repetitivas
+
+    if len(data.ordenes_repetitivas) > 0:
+        for repetitivas in data.ordenes_repetitivas:
+            for t in range(data.cantidad_trabajadores):
+                indices = list(map(int, data.indices_Xidto[:,:,t,repetitivas[0]].flatten())) + list(map(int, data.indices_Xidto[:,:,t,repetitivas[1]].flatten()))
+                values = [1] * 5*6*2
+                row = [indices, values]
+                my_problem.linear_constraints.add(lin_expr=[row], senses=['L'], rhs=[1])
+
 
 def populate_by_row(my_problem, data):
 
