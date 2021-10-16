@@ -1,0 +1,12 @@
+2
+2
+0 4000 1
+1 1000 1
+0
+0
+0
+0
+
+Comentario
+No todas las órdenes deben ser tomadas
+En este caso la 1 no conviene ser resuelta

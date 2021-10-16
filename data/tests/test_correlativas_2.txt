@@ -1,0 +1,13 @@
+1
+2
+0 1800 1
+1 100 1
+0
+1
+0 1
+0
+0
+
+Comentario:
+La orden 0 da ganancia, pero implica hacer la 1, que en el neto termina dando pérdida
+No se hace ninguna

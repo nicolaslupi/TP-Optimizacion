@@ -1,0 +1,12 @@
+1
+2
+0 100 1
+1 2000 1
+0
+1
+0 1
+0
+0
+
+Comentario:
+La orden 0 da pérdida, pero necesito hacerla para poder realizar la 1, que vale la pena

@@ -1,0 +1,14 @@
+1
+2
+0 4000 1
+1 4000 1
+0
+1
+0 1
+1
+0 1
+0
+
+Comentario
+Las dos órdenes son correlativas pero conflictivas
+No pueden ser resueltas con un sólo trabajador

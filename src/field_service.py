@@ -1,3 +1,5 @@
+# Sin Restricciones Deseables
+
 import sys
 import cplex
 import numpy as np
@@ -212,6 +214,12 @@ def add_constraint_matrix(my_problem, data):
                     row = [indices, values]
                     my_problem.linear_constraints.add(lin_expr=[row], senses=['E'], rhs=[0])
 
+            # De los pares de órdenes correlativas, la primera no puede hacerse en el último turno del día
+            for d in range(6):
+                indices = [int(data.indices_Kido[4,d,correlativas[0]])]
+                values = [1]
+                row = [indices, values]
+                my_problem.linear_constraints.add(lin_expr=[row], senses=['E'], rhs=[0])
 
     ######################################
     """ Ordenes Conflictivas - Lejanas """

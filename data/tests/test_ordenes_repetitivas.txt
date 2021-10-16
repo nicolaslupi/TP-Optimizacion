@@ -1,0 +1,12 @@
+1
+2
+0 10000 1
+0 10000 1
+0
+0
+0
+1
+0 1
+
+Comentario
+Hay dos órdenes que valen la pena, pero al ser repetitivas, el único trabajador que hay sólo realiza una

@@ -1,0 +1,12 @@
+2
+1
+0 10000 2
+1
+0 1
+0
+0
+0
+
+Comentario
+La orden vale la pena, pero requiere de 2 trabajadores, y los únicos que hay están peleados
+La orden no se hace

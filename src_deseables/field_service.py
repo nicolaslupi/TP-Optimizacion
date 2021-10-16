@@ -214,6 +214,13 @@ def add_constraint_matrix(my_problem, data):
                     row = [indices, values]
                     my_problem.linear_constraints.add(lin_expr=[row], senses=['E'], rhs=[0])
 
+            # De los pares de órdenes correlativas, la primera no puede hacerse en el último turno del día
+            for d in range(6):
+                indices = [int(data.indices_Kido[4,d,correlativas[0]])]
+                values = [1]
+                row = [indices, values]
+                my_problem.linear_constraints.add(lin_expr=[row], senses=['E'], rhs=[0])
+
 
     ######################################
     """ Ordenes Conflictivas - Lejanas """
@@ -433,7 +440,7 @@ def populate_by_row(my_problem, data):
 
     # Exportamos el LP cargado en myprob con formato .lp.
     # Util para debug.
-    my_problem.write('balanced_assignment.lp')
+    my_problem.write('balanced_assignment_deseables.lp')
 
 def solve_lp(my_problem, data):
 
@@ -457,7 +464,7 @@ def solve_lp(my_problem, data):
     used_vars = x_variables[ used_idx ]
     log = dict(zip(tags, used_vars))
 
-    f = open('log.txt', 'w')
+    f = open('log_deseables.txt', 'w')
     for key, value in log.items():
         f.write('%s: %s\n' % (key, value))
     f.close()

@@ -1,0 +1,10 @@
+5
+1
+0 6000 5
+0
+0
+0
+0
+
+Comentario
+Los 5 trabajadores están asignados en el mismo turno del mismo día
